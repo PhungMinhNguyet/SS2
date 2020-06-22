@@ -32,14 +32,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         confirm_query($r, $q); 
         if(mysqli_affected_rows($dbc) == 1) {
             // Success
-            $message = "<p class='success'>Thank you for your comment</p>";
+            $message = "<p class='success' style='color: azure;' >Thank you for your comment</p>";
             
         } else { // NO match was made
-            $message = "<p class='error'>Your comment could not be posted due to a system error.</p>";
+            $message = "<p class='error' style='color: azure;' >Your comment could not be posted due to a system error.</p>";
         }
     } else {
         // Neu co loi xay ra, do nguoi dung quen dien form, bao loi.
-        $message = "<p class='error'>Please try again</p>";
+        $message = "<p class='error' style='color: azure;' >Please try again</p>";
     }
 
 } // END main IF
@@ -54,8 +54,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<ol id='disscuss'>";
         while(list($cmt_id,$author, $comment, $date) = mysqli_fetch_array($r, MYSQLI_NUM)) {
             echo "<li class='comment-wrap'>
-                <p class='author'>{$author}</p>
-                <p class='comment-sec'>{$comment}</p>";                
+                <p class='author' style='color: azure;' >{$author}</p>
+                <p class='comment-sec' style='color: azure;'>{$comment}</p>";                
              echo "<p class='date'>{$date}</p>
                 </li>";
             
@@ -63,31 +63,32 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "</ol>";
     } else {
         // Neu ko co comment, thi se bao ra trinh duyet
-        echo "<h2> Be the first to leave a comment.</h2>";
+        echo "<h2 style='color: azure;' > Be the first to leave a comment.</h2>";
     }
 ?>
 <?php if(!empty($message)) echo $message; ?>
 <form id="comment-form" action="" method="post">
     <fieldset>
-    	<legend>Leave a comment</legend>
+    	<legend></legend>
             <div>
-            <label for="name">Name: <span class="required">*</span>
+            <label for="name" style='color: azure;' >Name: <span class="required">*</span>
             <?php if(isset($errors) && in_array('name',$errors)) { echo "<span class='warning'>Please enter your name.</span>";}?>
             </label>
             <input type="text" name="name" id="name" value="<?php if(isset($_POST['name'])) {echo htmlentities($_POST['name'], ENT_COMPAT, 'UTF-8');} ?>" size="20" maxlength="80" tabindex="1" />
         </div>
         <div>
-            <label for="email">Email: <span class="required">*</span>
+            <label for="email" style='color: azure;' >Email: <span class="required">*</span>
                 <?php if(isset($errors) && in_array('email',$errors)) echo "<span class='warning'>Please enter your email.</span>";?>
             </label>
             <input type="text" name="email" id="email" value="<?php if(isset($_POST['email'])) {echo htmlentities($_POST['email']);} ?>" size="20" maxlength="80" tabindex="2" />
             </div>
         <div>
-            <label for="comment">Your Comment: <span class="required">*</span>
+            <label for="comment" style='color: azure;'>Your Comment: <span class="required">*</span>
                 <?php if(isset($errors) && in_array('comment',$errors)) { echo "<span class='warning'>Please enter your message.</span>"; } ?>
             </label>
-            <div id="comment"><textarea name="comment" rows="10" cols="50" tabindex="3"><?php if(isset($_POST['comment'])) {echo htmlentities($_POST['comment'], ENT_COMPAT, 'UTF-8');} ?></textarea></div>
+            <div id="comment"><textarea name="comment" rows="4" cols="50" tabindex="3"><?php if(isset($_POST['comment'])) {echo htmlentities($_POST['comment'], ENT_COMPAT, 'UTF-8');} ?></textarea></div>
         </div>
     </fieldset>
+    <br>
     <div><input type="submit" name="submit" value="Post Comment" /></div>
 </form>
