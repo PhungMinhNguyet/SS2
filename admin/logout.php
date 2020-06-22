@@ -1,7 +1,7 @@
 <?php $title = 'Lot Out'; include('header.php');?>
 <?php include('../includes/mysqli_connect.php');?>
 <?php include('../includes/functions.php');?>
-<?php include('../includes/sidebar-a.php'); ?>
+
 <div id="content">
     <?php 
         if(!isset($_SESSION['first_name'])) {
