@@ -273,16 +273,15 @@ input[type="text"] {
 
 #disscuss {
     margin: 20px 15px;
-    list-style: decimal inside;
 }
 
 #disscuss li {
     border: 1px solid #FFCBA0;
-    background-color: #FCEFE3;
+    background-color: darkgray;
     padding: 5px 10px;
     border-radius: 5px;
     margin: 20px 0px;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #disscuss .author {
