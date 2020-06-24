@@ -97,7 +97,7 @@
 
         <h1> Welcome!</h1>
 
-        <h4> Hi everyone ^^ , please check here to view all my stories; it's a piece of cake , double click "HOME" to blow your mind .</h4>
+        <h4> Hi everyone ^^ , please check here to view all my stories; it's a piece of cake , click "HOME" to blow your mind .</h4>
 
         <h2> Explore now... </h2>
         <div class="opt">

@@ -17,7 +17,7 @@
 }
 #content_singlepage p:first-of-type:first-letter{
 font-size: 3em;
-color: greenyellow;
+color: lightcoral;
 float: left;
 line-height: 50%;
 margin: 0.1em 0.1em 0.1em -0.05em;
@@ -25,7 +25,7 @@ margin: 0.1em 0.1em 0.1em -0.05em;
 #content_title{
     column-span: all;
     padding-bottom: 20px;
-    color: greenyellow;
+    color: lightcoral;
     text-align:center;
 }
 </style>

@@ -54,8 +54,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<ol id='disscuss'>";
         while(list($cmt_id,$author, $comment, $date) = mysqli_fetch_array($r, MYSQLI_NUM)) {
             echo "<li class='comment-wrap'>
-                <p class='author' style='color: azure;' >{$author}</p>
-                <p class='comment-sec' style='color: azure;'>{$comment}</p>";                
+                <p class='author' style='color: black;' >{$author}</p>
+                <p class='comment-sec' style='color: black;'>{$comment}</p>";                
              echo "<p class='date'>{$date}</p>
                 </li>";
             
@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "</ol>";
     } else {
         // Neu ko co comment, thi se bao ra trinh duyet
-        echo "<h2 style='color: azure;' > Be the first to leave a comment.</h2>";
+        echo "<h2 style='color: black;' > Be the first to leave a comment.</h2>";
     }
 ?>
 <?php if(!empty($message)) echo $message; ?>
